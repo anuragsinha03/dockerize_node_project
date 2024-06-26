@@ -1,6 +1,9 @@
 const express = require("express");
+const dotenv = require("dotenv");
+dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT;
 
 app.get("/home", (req, res) => {
 	return res.json({
@@ -8,6 +11,6 @@ app.get("/home", (req, res) => {
 	});
 });
 
-app.listen(3000, () => {
-	console.log("Server running at 3000");
+app.listen(PORT, () => {
+	console.log(`Server is now running at PORT: ${PORT}`);
 });
